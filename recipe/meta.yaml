@@ -1,0 +1,41 @@
+{% set version = "0.3.0" %}
+
+package:
+  name: pylbm
+  version: {{ version }}
+
+source:
+  url: https://github.com/pylbm/pylbm/archive/{{ version }}.tar.gz
+  sha256: e17880cc177969860a404540c4363e261748e997e8039c513242aa9eef824e6d
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - numpy
+    - matplotlib
+    - six
+    - sympy
+    - cython
+    - h5py
+    - mpi4py
+    - future
+    - colorlog
+
+test:
+  imports:
+    - pylbm
+
+about:
+  home: http://pylbm.readthedocs.io
+  license: BSD 3-Clause
+  summary: Package for numerical simulations using Lattice Boltzmann solvers
+
+extra:
+  recipe-maintainers:
+    - gouarin
