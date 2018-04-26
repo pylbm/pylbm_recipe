@@ -48,6 +48,10 @@ install:
     # Cywing's git breaks conda-build. (See https://github.com/conda-forge/conda-smithy-feedstock/pull/2.)
     - cmd: rmdir C:\cygwin /s /q
 
+    # Microsoft MPI
+    - "powershell conf\\ci\\appveyor\\install-msmpi.ps1"
+    - "SetEnvMPI.cmd"
+
     # Add path, activate `conda` and update conda.
     - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
     - cmd: conda.exe update --yes --quiet conda
