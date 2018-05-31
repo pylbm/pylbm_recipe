@@ -1,4 +1,4 @@
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: pylbm
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/pylbm/pylbm/archive/{{ version }}.tar.gz
-  sha256: e17880cc177969860a404540c4363e261748e997e8039c513242aa9eef824e6d
+  sha256: a47b911e5b12169a301987e0ae724c09969a6b50a302cdf53b921ca3bc707f03
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
     - numpy
     - matplotlib
     - six
-    - sympy
+    - sympy >=1.1.1,<1.2
     - cython
     - h5py
     - mpi4py
