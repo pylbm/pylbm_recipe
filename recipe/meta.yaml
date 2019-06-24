@@ -1,32 +1,33 @@
-{% set version = "0.3.2" %}
+{% set version = "0.4.1" %}
 
 package:
   name: pylbm
   version: {{ version }}
 
 source:
-  url: https://github.com/pylbm/pylbm/archive/{{ version }}.tar.gz
-  sha256: 9a9263a5f14fbbd6a65b73c7e904c1add789f3334228f9535309d533a104b552
+  git_url: https://github.com/pylbm/pylbm.git
+  git_rev: {{ version }}
 
 build:
   number: 0
 
 requirements:
   build:
-    - python
+    - python >=3.5
     - setuptools
   run:
-    - python
+    - python >=3.5
     - numpy
     - matplotlib
-    - six
     - sympy >=1.1.1,<1.2
     - cython
-    - mpich [linux]
     - h5py
+    - mpich # [linux]
     - mpi4py
-    - future
     - colorlog
+    - colorama
+    - cerberus
+    - jinja2
 
 test:
   imports:
